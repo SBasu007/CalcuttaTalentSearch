@@ -44,6 +44,14 @@ const Navbar = () => {
             About
           </Link>
         </li>
+         <li>
+          <Link
+            href="/gallery"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Gallery
+          </Link>
+        </li>
 
         {/* Downloads dropdown (desktop) */}
         <li
