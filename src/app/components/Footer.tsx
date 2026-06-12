@@ -5,7 +5,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-1 sm:mb-2 text-sm sm:text-base">Talent Search School</h3>
             <p className="text-xs sm:text-sm">Government of West Bengal Registered Society</p>
-            <p className="text-xs sm:text-sm">123 School Street, Kolkata</p>
+            <p className="text-xs sm:text-sm">95, Baburam Ghosh Road Kolkata-700040 Oposite of Technition Studio</p>
           </div>
           <div>
             <h3 className="font-bold mb-1 sm:mb-2 text-sm sm:text-base">Quick Links</h3>

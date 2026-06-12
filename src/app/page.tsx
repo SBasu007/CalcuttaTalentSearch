@@ -11,13 +11,11 @@ import "swiper/css/pagination";
 export default function Home() {
   const slides = ["/slide1.jpg", "/slide2.jpg", "/slide3.jpg"];
   const announcements = [
-    "Admissions open for 2025 session.",
-    "Annual sports event on 15th September.",
-    "Parent-teacher meeting scheduled next week.",
+    "No recent announcements.",
   ];
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col bg-orange-100">
       {/* Hero Carousel */}
       <section className="w-full px-4 md:px-0 mt-4 md:mt-0">
   <Swiper
@@ -38,26 +36,26 @@ export default function Home() {
           priority={index === 0}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
           <h2 className="text-white text-lg sm:text-2xl md:text-5xl font-bold drop-shadow-lg mb-1 sm:mb-2">
             Welcome to Talent Search School
           </h2>
           <p className="text-white text-xs sm:text-base md:text-lg mb-2 sm:mb-4 max-w-full sm:max-w-md opacity-90">
             Nurturing young minds since 1995 with excellence in education and holistic development.
           </p>
-        </div>
+        </div> */}
       </SwiperSlide>
     ))}
   </Swiper>
 </section>
 {/* Mobile Achievement Counter */}
-<section className="md:hidden px-4 mt-8 mb-8 relative z-20">
+<section className="md:hidden px-4 mt-8 mb-2 relative z-20">
   <div className="bg-[#01315A] rounded-2xl shadow-2xl py-5 px-3">
     <div className="flex justify-between items-center">
       
       <div className="flex-1 text-center">
         <h3 className="text-white font-bold text-2xl">
-          <MobileCounter end={10000} />
+          <MobileCounter end={35000} />
         </h3>
         <p className="text-white/80 text-[10px] uppercase tracking-wider mt-1">
           Students
@@ -93,35 +91,49 @@ export default function Home() {
 <section className="w-full flex flex-col md:flex-row gap-6 md:gap-12 py-12 sm:py-16 px-4 sm:px-6 md:px-20">
   {/* Upcoming Events */}
   <div className="flex-1">
-    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 sm:mb-8">
-      Upcoming Events
-    </h2>
+   <h2
+  className="
+    font-[family-name:var(--font-playfair)]
+    text-[#01315A]
+    text-2xl
+    sm:text-3xl
+    md:text-4xl
+    font-bold
+    mb-3 sm:mb-4
+  "
+>
+  Upcoming Events
+</h2>
     <div className="bg-white rounded-xl shadow p-4 sm:p-6">
       <Image
-        src="/slide1.jpg" // replace with actual event image
-        alt="Upcoming Event"
-        width={600}
-        height={300}
-        className="rounded-lg object-cover w-full h-[230px] sm:h-[310px]"
-      />
-      <h3 className="text-lg sm:text-xl font-bold mt-4">
-        311th Monthly Baithak
+  src="/event.png"
+  alt="Upcoming Event"
+  loading="lazy"
+  width={600}
+  height={600}
+  className="rounded-lg w-full h-[245px] sm:h-[330px] object-contain"
+/>
+      <h3 className="text-lg sm:text-xl font-bold mt-4 mx-auto text-center">
+        Scholarship in Art 2026
       </h3>
-      <p className="text-gray-600 text-sm sm:text-base mt-2">
-        <span className="font-semibold">3rd September 2025</span> | 6:30PM | Chandigarh
+      <p className="text-gray-600 text-sm sm:text-base mt-2 mx-auto text-center">
+        <span className="font-semibold">21st June 2026</span> (Online) |  <span className="font-semibold">28th June 2026</span> (Offline) | Five Centers
       </p>
-      <button className="mt-4 bg-[#01315A] text-white px-5 py-2 rounded-full text-sm sm:text-base hover:bg-[#0156a6] transition">
+      <button className="mt-4 mx-auto block bg-[#01315A] text-white px-5 py-2 rounded-full text-sm sm:text-base hover:bg-[#0156a6] transition">
         Register for Free
       </button>
     </div>
   </div>
 
   {/* Announcements */}
-  <div className="w-full md:w-1/3 bg-[#01315A] text-white rounded-xl shadow p-6 flex flex-col">
-    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6">
+  <div className="w-full md:w-1/3 bg-[#01315A] text-white rounded-xl shadow p-6 pt-2 flex flex-col">
+    <h2 className="font-[family-name:var(--font-playfair)] text-2xl
+    sm:text-3xl
+    md:text-4xl
+    font-bold mb-3">
       Announcements
     </h2>
-
+    <hr className="border-white/20 my-4" />
     <div className="flex flex-col gap-4 flex-grow">
       {announcements.map((item, idx) => (
         <div
@@ -129,7 +141,7 @@ export default function Home() {
           className="border-b border-white/20 pb-4 last:border-none"
         >
           <p className="font-semibold text-sm sm:text-base">{item}</p>
-          <span className="text-xs sm:text-sm opacity-80">9 May 2025</span>
+          <span className="text-xs sm:text-sm opacity-80">14th June 2026</span>
         </div>
       ))}
     </div>
@@ -148,7 +160,8 @@ export default function Home() {
             About Talent Search School
           </h2>
           <p className="text-gray-700 text-sm sm:text-base mb-3 sm:mb-4">
-            Talent Search School has been nurturing young minds since 1995. Our mission is to provide quality education and holistic development to every child. We emphasize both academic excellence and extracurricular growth.
+            Calcutta Talent Search School was established in the year 1991 and received Society Registration in the same year. Today, it is one of the biggest art & craft organization in India with a team of 1000+ schools 35,000+ students and 1800+ teachers.
+Large numbers of reputed artists are associated with this institution. Some international scholars have also visited this institution. We conduct several activities like Examination, Painting, Marketing, Workshops Online Teaching, and more.
           </p>
           <button className="bg-[#01315A] text-white px-4 sm:px-6 py-2 rounded hover:bg-[#0156a6] transition text-sm sm:text-base">
             Learn More
