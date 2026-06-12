@@ -19,15 +19,15 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       {/* Hero Carousel */}
-      <section className="w-full h-[35vh] sm:h-[55vh] md:h-[90vh]">
+      <section className="w-full px-4 md:px-0 mt-4 md:mt-0">
   <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    navigation
-    pagination={{ clickable: true }}
-    autoplay={{ delay: 6500 }}
-    loop
-    className="w-full h-full"
-  >
+  modules={[Navigation, Pagination, Autoplay]}
+  navigation
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 6500 }}
+  loop
+  className="w-full h-[30vh] sm:h-[55vh] md:h-[90vh] rounded-2xl md:rounded-none overflow-hidden shadow-xl"
+>
     {slides.map((src, index) => (
       <SwiperSlide key={index} className="relative w-full h-full">
         <Image
@@ -89,7 +89,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
       {/* Announcements + Upcoming Events */}
 <section className="w-full flex flex-col md:flex-row gap-6 md:gap-12 py-12 sm:py-16 px-4 sm:px-6 md:px-20">
   {/* Upcoming Events */}
