@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import MobileCounter from "../components/MobileCounter";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       {/* Hero Carousel */}
-      <section className="w-full h-[50vh] sm:h-[70vh] md:h-[90vh]">
+      <section className="w-full h-[35vh] sm:h-[55vh] md:h-[90vh]">
   <Swiper
     modules={[Navigation, Pagination, Autoplay]}
     navigation
@@ -37,17 +38,56 @@ export default function Home() {
           priority={index === 0}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8 sm:p-6 mt-[77px]">
-          <h2 className="text-white text-xl sm:text-2xl md:text-5xl font-bold drop-shadow-lg mb-1 sm:mb-2">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
+          <h2 className="text-white text-lg sm:text-2xl md:text-5xl font-bold drop-shadow-lg mb-1 sm:mb-2">
             Welcome to Talent Search School
           </h2>
-          <p className="text-white text-sm sm:text-base md:text-lg mb-2 sm:mb-4 max-w-full sm:max-w-md">
+          <p className="text-white text-xs sm:text-base md:text-lg mb-2 sm:mb-4 max-w-full sm:max-w-md opacity-90">
             Nurturing young minds since 1995 with excellence in education and holistic development.
           </p>
         </div>
       </SwiperSlide>
     ))}
   </Swiper>
+</section>
+{/* Mobile Achievement Counter */}
+<section className="md:hidden px-4 mt-8 mb-8 relative z-20">
+  <div className="bg-[#01315A] rounded-2xl shadow-2xl py-5 px-3">
+    <div className="flex justify-between items-center">
+      
+      <div className="flex-1 text-center">
+        <h3 className="text-white font-bold text-2xl">
+          <MobileCounter end={10000} />
+        </h3>
+        <p className="text-white/80 text-[10px] uppercase tracking-wider mt-1">
+          Students
+        </p>
+      </div>
+
+      <div className="h-10 w-px bg-white/20" />
+
+      <div className="flex-1 text-center">
+        <h3 className="text-white font-bold text-2xl">
+          <MobileCounter end={4000} />
+        </h3>
+        <p className="text-white/80 text-[10px] uppercase tracking-wider mt-1">
+          Schools
+        </p>
+      </div>
+
+      <div className="h-10 w-px bg-white/20" />
+
+      <div className="flex-1 text-center">
+        <h3 className="text-white font-bold text-2xl">
+          <MobileCounter end={6000} />
+        </h3>
+        <p className="text-white/80 text-[10px] uppercase tracking-wider mt-1">
+          Teachers
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
       {/* Announcements + Upcoming Events */}
