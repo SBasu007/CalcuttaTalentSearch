@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const galleryImages = [
-  { src: '/1.jpg', alt: 'Gallery Item 1' },
+  { src: '/slide1.jpg', alt: 'Gallery Item 1' },
   { src: '/2.jpg', alt: 'Gallery Item 2' },
   { src: '/3.jpg', alt: 'Gallery Item 3' },
   { src: '/4.jpg', alt: 'Gallery Item 4' },
