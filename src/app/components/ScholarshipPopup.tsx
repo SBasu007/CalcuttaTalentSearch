@@ -75,13 +75,13 @@ export default function ScholarshipPopup() {
             </button>
 
             <div className="relative p-5 sm:p-6">
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col items-center gap-4 text-center">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#01315A]/10 bg-[#01315A]/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#01315A]">
                   <Sparkles className="h-4 w-4" />
                   Result Announcement
                 </div>
 
-                <div className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <div className="flex w-full max-w-xl flex-col items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
                   <div className="rounded-xl bg-[#01315A]/5 p-2 text-[#01315A]">
                     <BellRing className="h-5 w-5" />
                   </div>
@@ -96,7 +96,7 @@ export default function ScholarshipPopup() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                   <button
                     type="button"
                     onClick={goToScholarship}

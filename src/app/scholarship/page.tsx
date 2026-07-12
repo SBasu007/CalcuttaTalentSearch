@@ -38,7 +38,7 @@ export default function ScholarshipPage() {
         <div className="fixed inset-0 z-[100000] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm">
           <div className="w-full max-w-lg rounded-[1.75rem] border border-white/10 bg-white p-6 text-center shadow-[0_30px_120px_rgba(1,49,90,0.35)] sm:p-8">
             <div className="mx-auto mb-4 inline-flex rounded-full bg-[#01315A]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#01315A]">
-              Notice
+              Agree to the Judges&apos; Decision
             </div>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
               The decisions of the respected judges are full and final.
@@ -102,7 +102,6 @@ export default function ScholarshipPage() {
                 })}
               </div>
 
-              <p className="mt-3 text-xs text-slate-500">A to F</p>
             </div>
 
             <div className="flex min-w-0 flex-col gap-3">

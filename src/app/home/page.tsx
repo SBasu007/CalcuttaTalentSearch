@@ -178,6 +178,7 @@ Large numbers of reputed artists are associated with this institution. Some inte
             src="/slide3.jpg"
             alt="School Building"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-xl shadow"
           />
         </div>
