@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScholarshipPopup from "./components/ScholarshipPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,7 @@ export default function RootLayout({
         `}
       >
         <Navbar />
+        <ScholarshipPopup />
 
         <main>{children}</main>
 
