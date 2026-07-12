@@ -14,17 +14,17 @@ type ResultGroup = {
 };
 
 const resultGroups: ResultGroup[] = [
-  { key: "A", title: "Group A", subtitle: "Result sheet for Group A", image: "/scholarA.png" },
-  { key: "B", title: "Group B", subtitle: "Result sheet for Group B", image: "/scholarB.png" },
-  { key: "C", title: "Group C", subtitle: "Result sheet for Group C", image: "/scholarC.png" },
-  { key: "D", title: "Group D", subtitle: "Result sheet for Group D", image: "/scholarD.png" },
-  { key: "E", title: "Group E", subtitle: "Result sheet for Group E", image: "/scholarE.png" },
-  { key: "F", title: "Group F", subtitle: "Result sheet for Group F", image: "/scholarF.png" },
+  { key: "A", title: "Group A", subtitle: "Result sheet for Group A", image: "/scholar/scholarA.png" },
+  { key: "B", title: "Group B", subtitle: "Result sheet for Group B", image: "/scholar/scholarB.png" },
+  { key: "C", title: "Group C", subtitle: "Result sheet for Group C", image: "/scholar/scholarC.png" },
+  { key: "D", title: "Group D", subtitle: "Result sheet for Group D", image: "/scholar/scholarD.png" },
+  { key: "E", title: "Group E", subtitle: "Result sheet for Group E", image: "/scholar/scholarE.png" },
 ];
 
 export default function ScholarshipPage() {
   const [selectedGroup, setSelectedGroup] = useState<ResultGroupKey>("A");
   const [hasImageError, setHasImageError] = useState(false);
+  const [showDecisionPopup, setShowDecisionPopup] = useState(true);
 
   const activeGroup = resultGroups.find((group) => group.key === selectedGroup) ?? resultGroups[0];
 
@@ -33,9 +33,33 @@ export default function ScholarshipPage() {
   }, [selectedGroup]);
 
   return (
-    <section className="bg-gradient-to-b from-white via-[#f5f9fc] to-white py-8 sm:py-12">
-      <div className="mx-auto max-w-6xl px-3 sm:px-4 lg:px-6">
-        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_90px_rgba(1,49,90,0.12)]">
+    <>
+      {showDecisionPopup ? (
+        <div className="fixed inset-0 z-[100000] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm">
+          <div className="w-full max-w-lg rounded-[1.75rem] border border-white/10 bg-white p-6 text-center shadow-[0_30px_120px_rgba(1,49,90,0.35)] sm:p-8">
+            <div className="mx-auto mb-4 inline-flex rounded-full bg-[#01315A]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#01315A]">
+              Notice
+            </div>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              The decisions of the respected judges are full and final.
+            </h2>
+            <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
+              No requests will be entertained.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowDecisionPopup(false)}
+              className="mx-auto mt-6 inline-flex items-center justify-center rounded-full bg-[#01315A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#024b7f]"
+            >
+              I accept
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      <section className="bg-gradient-to-b from-white via-[#f5f9fc] to-white py-8 sm:py-12 lg:py-14">
+        <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-8 xl:px-10">
+        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_24px_90px_rgba(1,49,90,0.12)] lg:rounded-[1.75rem]">
           <div className="bg-gradient-to-r from-[#01315A] via-[#024b7f] to-[#0f6aa8] px-4 py-4 text-white sm:px-6">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/85 sm:text-sm">
@@ -49,7 +73,7 @@ export default function ScholarshipPage() {
             </div>
           </div>
 
-          <div className="grid gap-4 p-3 sm:p-4 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-5 lg:p-5">
+          <div className="grid gap-4 p-3 sm:p-4 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-6 lg:p-6 xl:grid-cols-[240px_minmax(0,1fr)] xl:gap-8 xl:p-8">
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3 sm:p-4">
               <div className="mb-3 flex items-center gap-2 text-[#01315A]">
                 <Images className="h-4 w-4" />
@@ -101,12 +125,13 @@ export default function ScholarshipPage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="relative min-h-[62vh] sm:min-h-[68vh]">
+                  <div className="relative min-h-[62vh] sm:min-h-[68vh] lg:min-h-[74vh] xl:min-h-[78vh]">
                     <Image
                       src={activeGroup.image}
                       alt={`${activeGroup.title} result sheet`}
                       fill
-                      className="bg-white object-contain p-2 sm:p-4"
+                      sizes="(max-width: 1024px) 100vw, (max-width: 1280px) calc(100vw - 280px), calc(100vw - 320px)"
+                      className="bg-white object-contain p-1 sm:p-3 lg:p-2 xl:p-1"
                       onError={() => setHasImageError(true)}
                       priority={selectedGroup === "A"}
                     />
@@ -120,7 +145,8 @@ export default function ScholarshipPage() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

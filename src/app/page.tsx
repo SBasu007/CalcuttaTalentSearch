@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import MobileCounter from "./components/MobileCounter";
@@ -11,7 +12,7 @@ import "swiper/css/pagination";
 export default function Home() {
   const slides = ["/slide1.jpg", "/slide2.jpg", "/slide3.jpg"];
   const announcements = [
-    "No recent announcements.",
+    "Scholarship Exam Results Announced!",
   ];
 
   return (
@@ -119,9 +120,9 @@ export default function Home() {
       <p className="text-gray-600 text-sm sm:text-base mt-2 mx-auto text-center">
         <span className="font-semibold">21st June 2026</span> (Online) |  <span className="font-semibold">28th June 2026</span> (Offline) | Five Centers
       </p>
-      <button className="mt-4 mx-auto block bg-[#01315A] text-white px-5 py-2 rounded-full text-sm sm:text-base hover:bg-[#0156a6] transition">
+      {/* <button className="mt-4 mx-auto block bg-[#01315A] text-white px-5 py-2 rounded-full text-sm sm:text-base hover:bg-[#0156a6] transition">
         Register for Free
-      </button>
+      </button> */}
     </div>
   </div>
 
@@ -140,7 +141,12 @@ export default function Home() {
           key={idx}
           className="border-b border-white/20 pb-4 last:border-none"
         >
-          <p className="font-semibold text-sm sm:text-base">{item}</p>
+          <Link
+            href="/scholarship"
+            className="font-semibold text-sm sm:text-base transition hover:text-white/80 hover:underline"
+          >
+            {item}
+          </Link>
           <span className="text-xs sm:text-sm opacity-80">14th June 2026</span>
         </div>
       ))}

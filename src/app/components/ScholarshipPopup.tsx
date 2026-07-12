@@ -106,13 +106,13 @@ export default function ScholarshipPopup() {
                     <ArrowRight className="h-4 w-4" />
                   </button>
 
-                  <Link
+                  {/* <Link
                     href="/scholarship"
                     onClick={closePopup}
                     className="inline-flex items-center justify-center rounded-full border border-[#01315A]/15 bg-white px-5 py-2.5 text-sm font-semibold text-[#01315A] transition hover:border-[#01315A]/30 hover:bg-[#01315A]/5"
                   >
                     Open Page
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
